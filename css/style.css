@@ -7,6 +7,7 @@
 
 :root {
   font: 100%/1.25 "Nunito";
+  color: #222;
 }
 
 a {
@@ -31,6 +32,26 @@ button {
 
 /*components*/
 .wrapper {
-  max-width: 1200px;
+  max-width: 960px;
   margin-inline: auto;
+  padding: 0.5rem;
 }
+
+/*extra-info*/
+.extra-info--bg {
+  background: #122ab2;
+  color: #fff;
+}
+
+.extra-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.extra-info__number:hover {
+  color: #b8bfe8;
+}
+
+/*menu*/
