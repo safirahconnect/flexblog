@@ -38,6 +38,16 @@ button {
   padding-block: 1rem;
 }
 
+.title {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.title--lg,
+.title--md {
+  padding-block: 1.25em;
+}
+
 /*extra-info*/
 .extra-info--bg {
   background: #122ab2;
@@ -117,4 +127,32 @@ button {
   .header__mobile--active {
     display: flex;
   }
+}
+
+/*sobre*/
+.sobre {
+  border-top: 2px solid #2c70ff;
+  border-bottom: 2px solid #2c70ff;
+  padding-block: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sobre > :first-child {
+  flex: 2 1 300px;
+}
+
+.sobre > * + * {
+  flex: 1 1 160px;
+}
+
+.sobre__info > * + * {
+  margin-top: 1em;
+}
+
+.sobre__info-text {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: #7c7c7c;
 }
