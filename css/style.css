@@ -1,13 +1,16 @@
-/*css reset*/
+/*css reset + root */
+:root {
+  --offset: 3.75em;
+  --title-offset: 1.25em;
+  --font: "Nunito";
+  font: 100%/1.25 var(--font);
+  color: #222;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-:root {
-  font: 100%/1.25 "Nunito";
-  color: #222;
 }
 
 a {
@@ -35,20 +38,11 @@ button {
   max-width: 960px;
   margin-inline: auto;
   padding-inline: 0.5rem;
-  padding-block: 1rem;
 }
 
 .title {
   font-size: 3rem;
   line-height: 1;
-}
-
-.title-spacing {
-  padding-block: 1.25em;
-}
-
-.produtos .title-spacing {
-  padding-inline: 0.4em;
 }
 
 .title--color-gray {
@@ -57,6 +51,23 @@ button {
 
 .title--bg-gray {
   background: #f7f7f7;
+}
+
+.button {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.25em 0.5em;
+  text-align: center;
+}
+
+.button--border-black {
+  border: 4px solid #222;
+}
+
+.button--border-black:hover {
+  background: #ccc;
 }
 
 /*extra-info*/
@@ -69,7 +80,8 @@ button {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1em;
+  gap: 1rem;
+  padding-block: 1rem;
 }
 
 .extra-info__number:hover {
@@ -86,8 +98,9 @@ button {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 1em;
+  gap: 1rem;
   color: #fff;
+  padding-block: 1rem;
   container: header / inline-size;
 }
 
@@ -104,7 +117,7 @@ button {
 .header__menu-item {
   display: block;
   font-size: 1.25rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
   border-bottom: 3px solid transparent;
 }
 
@@ -140,11 +153,16 @@ button {
   }
 }
 
+/*introduction title*/
+.introduction-title {
+  padding-block: var(--title-offset);
+}
+
 /*sobre*/
 .sobre {
   border-top: 2px solid #2c70ff;
   border-bottom: 2px solid #2c70ff;
-  padding-block: 3rem;
+  padding-block: var(--offset);
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -169,16 +187,24 @@ button {
 }
 
 /*produtos*/
+.produtos {
+  padding-block: var(--offset);
+}
+
 .produtos__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
+  padding-block-start: var(--offset);
+}
+
+.produtos__item > .title {
+  padding: var(--title-offset);
 }
 
 .produtos__item {
-  flex: 1 1 175px;
-  display: flex;
-  flex-direction: column;
+  flex: 1;
+  align-self: flex-end;
 }
 
 .produtos__item--border-blue {
@@ -196,4 +222,91 @@ button {
 .produtos__img {
   flex: 1;
   object-fit: cover;
+}
+
+/*Preço*/
+.preco--bg {
+  background: #f7f7f7;
+}
+
+.preco {
+  container: preco / inline-size;
+}
+
+.preco__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  padding: var(--offset);
+}
+
+.preco__item {
+  flex: 1;
+  border: 4px solid #fff;
+  padding: 2.5rem;
+}
+
+.preco__item > .title {
+  text-align: center;
+}
+
+.preco__item > * + * {
+  margin-top: 0.5em;
+}
+
+.preco__currency {
+  display: block;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  padding-block: 0.25em;
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+}
+
+.preco__currency--mod {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.preco__advantages-list {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: #7c7c7c;
+  font-style: italic;
+}
+
+.preco__advantages-list > * + * {
+  margin-top: 0.5em;
+}
+
+.preco__advantages-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.preco__advantages-item::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #122ab2;
+  border-radius: 50%;
+}
+
+@container (max-width: 800px) {
+  .preco__list {
+    padding-inline: calc(var(--offset) / 2);
+  }
+
+  .preco__item:last-child {
+    order: -2;
+  }
+
+  .preco__item:nth-child(2) {
+    order: -1;
+  }
 }
