@@ -43,9 +43,20 @@ button {
   line-height: 1;
 }
 
-.title--lg,
-.title--md {
+.title-spacing {
   padding-block: 1.25em;
+}
+
+.produtos .title-spacing {
+  padding-inline: 0.4em;
+}
+
+.title--color-gray {
+  color: #a4a4a4;
+}
+
+.title--bg-gray {
+  background: #f7f7f7;
 }
 
 /*extra-info*/
@@ -155,4 +166,34 @@ button {
   font-size: 1.25rem;
   line-height: 1.4;
   color: #7c7c7c;
+}
+
+/*produtos*/
+.produtos__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.produtos__item {
+  flex: 1 1 175px;
+  display: flex;
+  flex-direction: column;
+}
+
+.produtos__item--border-blue {
+  border-top: 8px solid #66e9eb;
+}
+
+.produtos__item--border-pink {
+  border-top: 8px solid #f9265e;
+}
+
+.produtos__item--border-purple {
+  border-top: 8px solid #ae81ff;
+}
+
+.produtos__img {
+  flex: 1;
+  object-fit: cover;
 }
