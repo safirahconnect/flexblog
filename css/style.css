@@ -446,3 +446,17 @@ button {
 .newsletter .button {
   flex: 1 1 200px;
 }
+
+.footer--bg {
+  background: #2c70ff;
+}
+
+.footer {
+  padding-block: var(--offset);
+}
+
+.footer__text {
+  color: #122ab2;
+  font-size: 2.25rem;
+  text-align: center;
+}
