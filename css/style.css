@@ -28,6 +28,10 @@ img {
   height: auto;
 }
 
+input {
+  width: 100%;
+}
+
 input,
 button {
   font: inherit;
@@ -64,6 +68,7 @@ button {
   text-transform: uppercase;
   padding: 0.25em 0.5em;
   text-align: center;
+  outline: none;
 }
 
 .button--border-black {
@@ -72,6 +77,26 @@ button {
 
 .button--border-black:hover {
   background: #ccc;
+}
+
+.button--border-black:focus {
+  border-color: #122ab2;
+}
+
+.button--border-blue:focus {
+  border-color: #000;
+}
+
+.button--border-blue {
+  border: 2px solid #2c70ff;
+}
+
+.button--bg-blue {
+  background: #2c70ff;
+}
+
+.button--color-white {
+  color: #fff;
 }
 
 /*extra-info*/
@@ -364,4 +389,60 @@ button {
   font-size: 1.25rem;
   line-height: 1.4;
   color: #7c7c7c;
+}
+
+/*newsletter*/
+.newsletter--bg {
+  background: #f7f7f7;
+}
+
+.newsletter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-block: var(--offset);
+}
+
+.newsletter__info {
+  flex: 1 1 260px;
+}
+
+.newsletter__info > * + * {
+  margin-top: 1em;
+}
+
+.newsletter__info-text {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-style: italic;
+  color: #a4a4a4;
+  max-width: 240px;
+}
+
+.newsletter__form {
+  flex: 2 1 260px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.newsletter__form-input {
+  flex: 3 1 200px;
+  font-size: 1.5rem;
+  padding: 0.25em 0.5em;
+  border: 2px solid #2c70ff;
+}
+
+.newsletter__form-input:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.newsletter__form-input::placeholder {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.newsletter .button {
+  flex: 1 1 200px;
 }
